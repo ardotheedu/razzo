@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+  :root {
+    --fundo: #F7F9FC;
+    --blue: #249CF2;
+  }
   * {
     margin: 0;
     padding: 0;
