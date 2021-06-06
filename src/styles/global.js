@@ -23,14 +23,6 @@ const GlobalStyle = createGlobalStyle`
     font-weight: normal;
     src: local('Gordita Regular'), url('Gordita Regular.woff') format('woff');
     }
-    
-
-    @font-face {
-    font-family: 'Gordita Regular Italic';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Gordita Regular Italic'), url('Gordita Regular Italic.woff') format('woff');
-    }
   
 `;
 
