@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 950px;
+  width: 920px;
   display: flex;
   flex-wrap: wrap;
 `;
@@ -9,7 +9,7 @@ export const Restaurant = styled.div`
   display: flex;
   align-items: flex-start;
   padding: 16px;
-  width: 300px;
+  width: 280px;
   height: 99px;
   border: 1px solid #e5e4e6;
   border-radius: 7px;
@@ -23,7 +23,7 @@ export const Info = styled.div`
 export const Logo = styled.div`
   img {
     width: 4.25rem;
-    height: 4.25rem;
+    height: 4.1875rem;
     border-radius: 7px;
     margin-right: 12px;
   }
