@@ -1,22 +1,19 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 920px;
   display: flex;
-  flex-wrap: wrap;
-  a {
-    text-decoration: none;
-  }
+  flex-direction: column;
+  margin: 2rem 0 1.5rem 0;
 `;
 export const Restaurant = styled.div`
   display: flex;
   align-items: flex-start;
+  margin: 1.2rem 1rem 1.5rem 0;
   padding: 16px;
-  width: 280px;
+  width: 870px;
   height: 99px;
   border: 1px solid #e5e4e6;
   border-radius: 7px;
-  margin: 0 15px 23px 0;
 `;
 export const Info = styled.div`
   display: flex;
