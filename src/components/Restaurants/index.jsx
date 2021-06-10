@@ -20,6 +20,7 @@ export function Restaurants() {
   useEffect(() => {
     dispatch(getAllRestaurants());
   }, []);
+
   return (
     <Container>
       {restaurants.map(restaurant => (

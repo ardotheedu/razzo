@@ -1,23 +1,18 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-unused-vars */
 import React from 'react';
 
 import { IoIosArrowForward } from 'react-icons/io';
-import { FaTrashAlt } from 'react-icons/fa';
 
+import { useSelector, useDispatch } from 'react-redux';
 import {
   Container,
   Page,
   FromPage,
   ToPage,
   CartBox,
-  RestaurantName,
-  Item,
   ItemBox,
-  Picture,
-  Info,
-  ItemName,
-  Price,
-  AddAndRemoveItemBox,
-  Category,
   Value,
   SubTotal,
   Delivery,
@@ -28,8 +23,25 @@ import {
   ValueText,
   ValueNumber,
 } from './styles';
+import {
+  removeItem,
+  incrementItem,
+  decrementItem,
+} from '../../store/ducks/cart';
+import ItemCart from '../ItemCart';
 
 export function Cart() {
+  const cart = useSelector(state => state.cart);
+  const dispatch = useDispatch();
+  function removeItemCart(id) {
+    dispatch(removeItem(id));
+  }
+  const subTotal = cart.reduce((sumTotal, product) => {
+    sumTotal += product.pricing * product.quantity;
+
+    return sumTotal;
+  }, 0);
+  const total = subTotal + 7.9;
   return (
     <Container>
       <Page>
@@ -39,25 +51,9 @@ export function Cart() {
       </Page>
       <CartBox>
         <ItemBox>
-          <RestaurantName>RodaPizza</RestaurantName>
-          <Item>
-            <Picture>
-              <img src="https://github.com/ardotheedu.png" alt="img" />
-            </Picture>
-            <Info>
-              <ItemName>Pizza de Calabresa</ItemName>
-              <Category>Pizzas</Category>
-              <Price>R$ 58.98</Price>
-            </Info>
-            <AddAndRemoveItemBox>
-              <button type="button">-</button>
-
-              <p>1</p>
-
-              <button type="button">+</button>
-            </AddAndRemoveItemBox>
-            <FaTrashAlt size={24} color="D0C9D6" />
-          </Item>
+          {cart.map(item => (
+            <ItemCart item={item} removeItemCart={removeItemCart} />
+          ))}
         </ItemBox>
         <Value>
           <SubTotal>
@@ -65,7 +61,7 @@ export function Cart() {
               <ValueText>Subtotal:</ValueText>
             </div>
             <div>
-              <ValueNumber>R$ 300</ValueNumber>
+              <ValueNumber>R$ {subTotal}</ValueNumber>
             </div>
           </SubTotal>
           <Delivery>
@@ -79,10 +75,10 @@ export function Cart() {
           <hr />
           <Total>
             <div>
-              <ValueNumber>Total</ValueNumber>
+              <ValueNumber>Total:</ValueNumber>
             </div>
             <div>
-              <p>R$ 307,90</p>
+              <p>R$ {total}</p>
             </div>
           </Total>
         </Value>

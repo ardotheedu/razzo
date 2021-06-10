@@ -12,7 +12,7 @@ export function Header() {
         <div>
           <img src="/logo.svg" alt="razzo" />
           <nav>
-            <Link href="/">Dashboard</Link>
+            <Link to="/">Dashboard</Link>
           </nav>
         </div>
 
