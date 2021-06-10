@@ -76,9 +76,10 @@ export function Cart() {
               <ValueNumber>R$ 7,90</ValueNumber>
             </div>
           </Delivery>
+          <hr />
           <Total>
             <div>
-              <p>Total</p>
+              <ValueNumber>Total</ValueNumber>
             </div>
             <div>
               <p>R$ 307,90</p>

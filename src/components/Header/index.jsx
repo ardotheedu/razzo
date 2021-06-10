@@ -2,6 +2,7 @@ import React from 'react';
 
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { IoIosArrowDown } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 import { Container, Content, BagShop, User } from './styles';
 
 export function Header() {
@@ -11,7 +12,7 @@ export function Header() {
         <div>
           <img src="/logo.svg" alt="razzo" />
           <nav>
-            <a href="/">Dashboard</a>
+            <Link href="/">Dashboard</Link>
           </nav>
         </div>
 
